@@ -5,6 +5,8 @@
  */
 package beans;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.annotation.PostConstruct;
@@ -53,7 +55,11 @@ public class BoldayBean {
     //懇親会点数理由
     private  String konsinroyuu;
 
-
+    //日付
+    private Date date;
+    /*	//日付
+    	private SimpleDateFormat date = new SimpleDateFormat("yyyy/MM/dd(E)");
+    */
     
 
 
@@ -94,6 +100,18 @@ public class BoldayBean {
         
     }
     
+    //日付　取得
+    public Date getDate() {
+            //カレンダーを生成
+            Calendar cal = Calendar.getInstance();
+            date = cal.getTime();
+            return date;
+    }
+
+    //日付 設定
+    public void setDate(Date date) {
+            this.date = date;
+    }
 
     
     
